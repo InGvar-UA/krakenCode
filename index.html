@@ -4,34 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KrakenCode — Студия Веб-Разработки</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Принудительный сброс кэша v11.0 -->
+    <link rel="stylesheet" href="./style.css?v=11.0">
 </head>
 <body>
 
-    <!-- Навигация -->
+    <!-- Навигационная панель: Чисто Чёрный Глянец -->
     <header class="header">
-        <div class="logo">KRAKEN<span>CODE</span></div>
+        <div class="logo">
+            <img src="./images/kraken-wordmark.svg" alt="KrakenCode Logo" class="logo-img">
+        </div>
         <nav class="nav">
             <a href="#services">Услуги</a>
-            <a href="#about">О нас</a>
             <a href="#contact" class="btn-connect">Связаться</a>
         </nav>
     </header>
 
-    <!-- Главный экран -->
+    <!-- Минималистичный Главный экран -->
     <section class="hero">
-        <div class="hero-container">
-            <span class="badge">Премиальные цифровые решения</span>
-            <h1>Создаем сайты, которые заставляют сказать <span>«ВАУ»</span></h1>
-            <p>Высокотехнологичная разработка для бизнеса, умная автоматизация и безупречный дизайн в стиле Apple.</p>
-            <div class="hero-actions">
-                <a href="#services" class="btn-primary">Смотреть услуги</a>
-                <a href="#contact" class="btn-secondary">Обсудить проект</a>
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        
+        <div class="hero-wrapper">
+            <!-- Левая часть: Предложение студии -->
+            <div class="hero-content">
+                <span class="badge">Создание сайтов любой сложности и конструкции</span>
+                <h1>KrakenCode</h1>
+                
+                <div class="hero-services-list">
+                    <p>✓ Разработка сайтов под малый и большой бизнес</p>
+                    <p>✓ Создание одностраничных сайтов и премиум-лендингов</p>
+                    <p>✓ Интеграция гибких CMS и полная техническая настройка</p>
+                    <p>✓ Написание умных ботов для Telegram & Discord</p>
+                    <p>✓ Сквозная автоматизация процессов и рутинных задач</p>
+                    <p>✓ Глубокая поисковая SEO-оптимизация и аудит</p>
+                </div>
+
+                <div class="hero-actions">
+                    <a href="#services" class="btn-primary">Смотреть услуги</a>
+                    <a href="#contact" class="btn-secondary">Обсудить проект</a>
+                </div>
+            </div>
+
+            <!-- Правая часть: Чистый интерактивный Apple-виджет эффективности -->
+            <div class="hero-visual-widget">
+                <div class="premium-widget">
+                    <div class="widget-badge">HIGH PERFORMANCE</div>
+                    <h2>Качество без компромиссов</h2>
+                    <div class="widget-list">
+                        <div class="widget-item">
+                            <span class="dot-indicator"></span>
+                            <div>
+                                <h4>Идеальный UX/UI</h4>
+                                <p>Адаптивная верстка под все типы современных экранов.</p>
+                            </div>
+                        </div>
+                        <div class="widget-item">
+                            <span class="dot-indicator"></span>
+                            <div>
+                                <h4>Безупречный код</h4>
+                                <p>Разработка на быстрых библиотеках без багов и ошибок.</p>
+                            </div>
+                        </div>
+                        <div class="widget-item">
+                            <span class="dot-indicator"></span>
+                            <div>
+                                <h4>Защита и SEO</h4>
+                                <p>Сквозная оптимизация кода и защита от взлома.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Блок Услуг -->
+    <!-- Блок Услуг (Services Section) -->
     <section id="services" class="services">
         <div class="container">
             <div class="section-title">
@@ -40,82 +88,59 @@
             </div>
 
             <div class="services-grid">
-                
-                <!-- Карточка 1 -->
+                <!-- Услуга 1 -->
                 <div class="service-card">
                     <div class="icon">💼</div>
                     <h3>Сайты под бизнес</h3>
                     <p>Проектируем цифровые экосистемы под любой масштаб. Эффективные решения для малого бизнеса и отказоустойчивые платформы для крупных корпораций.</p>
                 </div>
 
-                <!-- Карточка 2 -->
+                <!-- Услуга 2 -->
                 <div class="service-card">
                     <div class="icon">📄</div>
                     <h3>Одностраничные сайты</h3>
                     <p>Премиальные Landing Pages с уникальным визуалом и высокой конверсией. Идеальный баланс эстетики, скорости работы и маркетинговой логики.</p>
                 </div>
 
-                <!-- Карточка 3 -->
+                <!-- Услуга 3 -->
                 <div class="service-card">
                     <div class="icon">⚙️</div>
                     <h3>Сайты с использованием CMS</h3>
                     <p>Разработка и интеграция современных, гибких систем управления контентом. Полная свобода редактирования данных без привлечения программистов.</p>
                 </div>
 
-                <!-- Карточка 4 -->
+                <!-- Услуга 4 -->
                 <div class="service-card">
                     <div class="icon">🤖</div>
                     <h3>Написание ботов</h3>
-                    <p>Создание интеллектуальных и многофункциональных ботов для Telegram и Discord. Интеграция с вашими внутренними базами данных и сервисами.</p>
+                    <p>Создание интеллектуальных и многофункциональных ботов для Telegram и Discord. Интеграция с вашими внутренними базами данных и внешними сервисами.</p>
                 </div>
 
-                <!-- Карточка 5 -->
+                <!-- Услуга 5 -->
                 <div class="service-card">
                     <div class="icon">⚡</div>
                     <h3>Автоматизация процессов</h3>
                     <p>Разработка индивидуальных скриптов, парсеров и сквозных систем автоматизации рутины, которые экономят время и заменяют человеческий фактор.</p>
                 </div>
 
-                <!-- Карточка 6 -->
+                <!-- Услуга 6 -->
                 <div class="service-card">
                     <div class="icon">📈</div>
                     <h3>SEO-настройка и аудит</h3>
                     <p>Глубокая поисковая оптимизация кода, ускорение рендеринга страниц до предела и правильная техническая подготовка сайта к продвижению.</p>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Короткий блок "О нас" -->
-    <section id="about" class="about">
-        <div class="about-container">
-            <h2>Почему выбирают нас</h2>
-            <div class="about-features">
-                <div class="feature">
-                    <h4>01 / Безупречный код</h4>
-                    <p>Пишем чистый, поддерживаемый код с максимальной производительностью.</p>
-                </div>
-                <div class="feature">
-                    <h4>02 / Скорость загрузки</h4>
-                    <p>Оптимизируем графику и архитектуру, чтобы сайт открывался мгновенно.</p>
-                </div>
-                <div class="feature">
-                    <h4>03 / Фокус на результат</h4>
-                    <p>Каждая деталь интерфейса решает конкретную бизнес-задачу.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Форма обратной связи -->
+    <!-- Секция Обратной Связи -->
     <section id="contact" class="contact">
         <div class="contact-container">
             <div class="contact-info">
                 <h2>Начнем ваш проект?</h2>
-                <p>Оставьте заявку, и мы разработаем технологичное решение специально под ваши задачи.</p>
+                <p>Оставьте заявку, и мы разработаем технологичное решение специально под задачи вашего бизнеса.</p>
             </div>
-            <form class="contact-form" onsubmit="event.preventDefault(); alert('Форма отправлена! (Демо)');">
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Форма отправлена!');">
                 <input type="text" placeholder="Ваше имя" required>
                 <input type="email" placeholder="Email адрес" required>
                 <textarea placeholder="Расскажите немного о проекте" rows="4" required></textarea>
@@ -124,7 +149,7 @@
         </div>
     </section>
 
-    <!-- Футер -->
+    <!-- Подвал -->
     <footer class="footer">
         <p>&copy; 2026 KRAKENCODE. Все права защищены. Разработано в высшем качестве.</p>
     </footer>
