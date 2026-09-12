@@ -20,7 +20,7 @@ body {
     padding: 0 20px;
 }
 
-/* Фиксированная шапка — СТРОГО ЧИСТО ЧЕРНАЯ */
+/* Фиксированная шапка — СТРОГО ЧИСТО ЧЕРНАЯ (БЕЗ ИЗМЕНЕНИЙ) */
 .header {
     position: fixed;
     top: 0;
@@ -31,7 +31,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 50px;
-    background: #000000 !important; /* Чисто черный цвет без прозрачности */
+    background: #000000 !important; 
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
     z-index: 100;
@@ -44,10 +44,10 @@ body {
 }
 
 .logo-img {
-    height: 66px !important; /* Фиксированный крупный размер логотипа */
+    height: 66px !important; /* Наш исходный размер 66px */
     width: auto;
     display: block;
-    filter: brightness(0) invert(1) !important; /* Идеально белый цвет */
+    filter: brightness(0) invert(1) !important; 
 }
 
 .nav {
@@ -81,8 +81,7 @@ body {
 .nav .btn-connect:hover {
     transform: scale(1.03);
 }
-
-/* ГЛАВНЫЙ ЭКРАН */
+/* ОБНОВЛЕННЫЙ ДИНАМИЧЕСКИЙ ГЛАВНЫЙ ЭКРАН */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -91,29 +90,43 @@ body {
     position: relative;
     padding: 150px 40px 80px 40px;
     background-color: #f5f5f7;
-    overflow: hidden;
+    overflow: hidden; /* Чтобы сферы не вылезали за края */
 }
 
+/* Стили для премиальных парящих сфер света на фоне */
 .glow-orb {
     position: absolute;
     border-radius: 50%;
-    filter: blur(100px);
     pointer-events: none;
+    will-change: transform;
+    mix-blend-mode: multiply; /* Мягкое смешивание цветов */
+    filter: blur(80px); /* Красивое Apple-размытие краев */
+    opacity: 0.45;
     z-index: 1;
 }
-.orb-1 {
-    top: 20%;
-    right: 10%;
-    width: 450px;
-    height: 450px;
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.03) 0%, transparent 70%);
+
+.orb-blue {
+    top: 15%;
+    right: 5%;
+    width: 550px;
+    height: 550px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, transparent 70%);
 }
-.orb-2 {
-    bottom: 5%;
-    left: 30%;
+
+.orb-amber {
+    bottom: -5%;
+    left: 20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(212, 163, 115, 0.22) 0%, transparent 70%);
+}
+
+.orb-silver {
+    top: 40%;
+    left: 45%;
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.02) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(134, 134, 139, 0.15) 0%, transparent 70%);
 }
 
 .hero-wrapper {
@@ -123,7 +136,7 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 60px;
-    z-index: 2;
+    z-index: 2; /* Поверх фоновых сфер */
 }
 
 .hero-content {
@@ -199,7 +212,7 @@ body {
     transition: all 0.2s ease;
 }
 .btn-secondary:hover { background: #f5f5f7; transform: translateY(-2px); }
-/* НОВЫЙ МИНИМАЛИСТИЧНЫЙ ВИДЖЕТ СПРАВА */
+/* ПРАВЫЙ КОМПАКТНЫЙ ВИДЖЕТ */
 .hero-visual-widget {
     flex: 1;
     display: flex;
@@ -209,13 +222,15 @@ body {
 
 .premium-widget {
     width: 100%;
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.85); /* Полупрозрачный стеклянный виджет */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-radius: 32px;
     padding: 40px;
-    border: 1px solid rgba(0,0,0,0.04);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(255,255,255,0.7);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.03);
     text-align: left;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.4s ease;
 }
 .premium-widget:hover {
     transform: translateY(-4px);
@@ -236,42 +251,14 @@ body {
     letter-spacing: -0.5px;
 }
 
-.widget-list {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-.widget-item {
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-}
-
-.dot-indicator {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #3b82f6;
-    margin-top: 6px;
-    flex-shrink: 0;
-}
-
-.widget-item h4 {
-    font-size: 1.05rem;
-    font-weight: 600;
-    margin-bottom: 4px;
-    color: #1d1d1f;
-}
-
-.widget-item p {
-    font-size: 0.9rem;
-    color: #86868b;
-    line-height: 1.4;
-}
+.widget-list { display: flex; flex-direction: column; gap: 24px; }
+.widget-item { display: flex; gap: 16px; align-items: flex-start; }
+.dot-indicator { width: 8px; height: 8px; border-radius: 50%; background: #3b82f6; margin-top: 6px; flex-shrink: 0; }
+.widget-item h4 { font-size: 1.05rem; font-weight: 600; margin-bottom: 4px; color: #1d1d1f; }
+.widget-item p { font-size: 0.9rem; color: #86868b; line-height: 1.4; }
 
 /* Остальные секции сайта */
-.services { padding: 140px 0; background: #ffffff !important; }
+.services { padding: 140px 0; background: #ffffff !important; position: relative; z-index: 10; }
 .section-title { text-align: center; max-width: 600px; margin: 0 auto 80px auto; }
 .section-title h2 { font-size: 2.6rem; font-weight: 700; margin-bottom: 18px; color: #1d1d1f; }
 .section-title p { font-size: 1.1rem; color: #86868b; }
@@ -282,7 +269,7 @@ body {
 .service-card h3 { font-size: 1.35rem; font-weight: 600; margin-bottom: 14px; color: #1d1d1f; }
 .service-card p { font-size: 0.98rem; color: #515154; line-height: 1.6; }
 
-.contact { padding: 140px 20px; background: #ffffff !important; }
+.contact { padding: 140px 20px; background: #ffffff !important; position: relative; z-index: 10; }
 .contact-container { max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 60px; align-items: center; }
 .contact-info { flex: 1 1 400px; }
 .contact-info h2 { font-size: 2.6rem; font-weight: 700; margin-bottom: 20px; color: #1d1d1f; }
@@ -290,7 +277,7 @@ body {
 .contact-form { background: #f5f5f7 !important; padding: 45px; border-radius: 32px; display: flex; flex-direction: column; gap: 22px; flex: 1 1 400px; }
 .contact-form input, .contact-form textarea { width: 100%; padding: 18px; border-radius: 14px; border: 1px solid rgba(0,0,0,0.08); background: #ffffff !important; font-size: 0.95rem; color: #1d1d1f !important; outline: none; }
 .btn-submit { background: #1d1d1f; color: #ffffff; padding: 18px; border: none; border-radius: 14px; font-size: 1rem; font-weight: 600; cursor: pointer; }
-.footer { padding: 50px 20px; text-align: center; background: #f5f5f7 !important; border-top: 1px solid rgba(0, 0, 0, 0.05); font-size: 0.88rem; color: #86868b; }
+.footer { padding: 50px 20px; text-align: center; background: #f5f5f7 !important; border-top: 1px solid rgba(0, 0, 0, 0.05); font-size: 0.88rem; color: #86868b; position: relative; z-index: 10; }
 
 @media (max-width: 992px) {
     .hero-wrapper { flex-direction: column; text-align: center; }
@@ -299,6 +286,4 @@ body {
     .hero-visual-widget { width: 100%; margin-top: 40px; justify-content: center; }
 }
 
-@media (max-width: 768px) {
-    .nav { display: none; }
-}
+@media (max-width: 768px) { .nav { display: none; } }

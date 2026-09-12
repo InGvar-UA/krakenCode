@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KrakenCode — Студия Веб-Разработки</title>
-    <!-- Принудительный сброс кэша v11.0 -->
-    <link rel="stylesheet" href="./style.css?v=11.0">
+    <!-- Принудительный сброс кэша v12.0 для моментального включения живого фона -->
+    <link rel="stylesheet" href="./style.css?v=12.0">
+    <!-- Подключаем легкую библиотеку GSAP для плавной анимации фонового света -->
+    <script src="https://cloudflare.com"></script>
 </head>
 <body>
 
-    <!-- Навигационная панель: Чисто Чёрный Глянец -->
+    <!-- Навигационная панель: Чисто Чёрный Глянец (Остается без изменений) -->
     <header class="header">
         <div class="logo">
             <img src="./images/kraken-wordmark.svg" alt="KrakenCode Logo" class="logo-img">
@@ -20,10 +22,12 @@
         </nav>
     </header>
 
-    <!-- Минималистичный Главный экран -->
+    <!-- Главный экран с живыми интерактивными сферами света -->
     <section class="hero">
-        <div class="glow-orb orb-1"></div>
-        <div class="glow-orb orb-2"></div>
+        <!-- Огромные светящиеся премиальные сферы на бэкграунде -->
+        <div class="glow-orb orb-blue" id="orb-blue"></div>
+        <div class="glow-orb orb-amber" id="orb-amber"></div>
+        <div class="glow-orb orb-silver" id="orb-silver"></div>
         
         <div class="hero-wrapper">
             <!-- Левая часть: Предложение студии -->
@@ -46,7 +50,7 @@
                 </div>
             </div>
 
-            <!-- Правая часть: Чистый интерактивный Apple-виджет эффективности -->
+            <!-- Правая часть: Чистый интерактивный Apple-виджет -->
             <div class="hero-visual-widget">
                 <div class="premium-widget">
                     <div class="widget-badge">HIGH PERFORMANCE</div>
@@ -154,5 +158,6 @@
         <p>&copy; 2026 KRAKENCODE. Все права защищены. Разработано в высшем качестве.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
