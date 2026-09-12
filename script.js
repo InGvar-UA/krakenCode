@@ -1,15 +1,14 @@
-// Регистрируем плагин ScrollTrigger в системе GSAP
 gsap.registerPlugin(ScrollTrigger);
 
 const pageModel = document.getElementById('page-model');
 
-// 1. ТАЙМЛАЙН СКРОЛЛА: СИНХРОННЫЙ РАЗЛЕТ И СМЕНА УСЛУГ
+// Создаем ультимативный таймлайн для скролла
 const tl = gsap.timeline({
     scrollTrigger: {
         trigger: ".scroll-container",
         start: "top top",
         end: "+=4000", 
-        scrub: 1.2,    
+        scrub: 1.5, // Делаем движение мыши ещё более плавным и весомым    
         pin: true,     
         onUpdate: (self) => {
             const progress = self.progress;
@@ -26,37 +25,36 @@ const tl = gsap.timeline({
     }
 });
 
-// Настраиваем 3D траекторию деконструкции
+// КИНЕМАТОГРАФИЧНЫЙ РАЗЛЕТ И ПОВОРОТ
 tl.to(pageModel, {
-    rotateX: 45,
-    rotateY: -35,
-    rotateZ: 15,
+    rotateX: 50,
+    rotateY: -30,
+    rotateZ: 20,
     duration: 1
 })
 .to('.layer-ui-elements', {
-    translateZ: 280,
-    x: 40,
-    y: -30,
+    translateZ: 320, // Увеличиваем глубину разлета
+    x: 50,
+    y: -40,
     duration: 1
 }, 0)
 .to('.layer-glass-panels', {
-    translateZ: 160,
-    x: -20,
+    translateZ: 180,
+    x: -30,
     y: 20,
     duration: 1
 }, 0)
 .to('.layer-grid', {
-    translateZ: 70,
+    translateZ: 90,
     duration: 1
 }, 0)
 .to('.layer-base', {
-    translateZ: -80,
-    boxShadow: "0 60px 120px rgba(0,0,0,0.08)",
+    translateZ: -100,
+    boxShadow: "0 100px 200px rgba(0,0,0,0.9)",
     duration: 1
 }, 0);
 
-
-// 2. ИНТЕРАКТИВНЫЙ МИКРО-ПАРАЛЛАКС ОТ МЫШИ
+// ИНТЕРАКТИВНЫЙ МИКРО-ПАРАЛЛАКС ОТ МЫШИ
 let mouseX = 0;
 let mouseY = 0;
 
@@ -65,9 +63,9 @@ window.addEventListener('mousemove', (e) => {
     mouseY = (e.clientY / window.innerHeight) - 0.5;
     
     gsap.to('#scene-3d', {
-        rotateY: mouseX * 15, 
-        rotateX: -mouseY * 15, 
-        duration: 0.8,
+        rotateY: mouseX * 20, 
+        rotateX: -mouseY * 20, 
+        duration: 1,
         ease: "power2.out"
     });
 });

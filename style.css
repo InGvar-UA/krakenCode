@@ -1,4 +1,3 @@
-/* Премиальный светлый дизайн в стиле Apple */
 @import url('https://googleapis.com');
 
 * {
@@ -10,70 +9,69 @@
 }
 
 body {
-    background-color: #f5f5f7; /* Каноничный светлый фон Apple */
-    color: #1d1d1f;
+    background-color: #0b0b0c; /* Меняем фон на ультра-стильный глубокий графит */
+    color: #ffffff;
     overflow-x: hidden;
     height: 100vh;
 }
 
-/* Элегантная ультра-светлая стеклянная шапка */
+/* Хедер Apple Style Dark */
 .apple-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 60px;
+    height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px;
-    background: rgba(245, 245, 247, 0.4);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 0 60px;
+    background: rgba(11, 11, 12, 0.5);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
     z-index: 100;
 }
 
 .logo {
-    font-weight: 700;
-    letter-spacing: 2px;
-    font-size: 1.1rem;
-    color: #1d1d1f;
-}
-
-.logo span {
-    font-weight: 300;
-    color: #86868b;
+    font-weight: 800;
+    letter-spacing: 3px;
+    font-size: 1.2rem;
+    background: linear-gradient(135deg, #fff 0%, #555 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .status-badge {
-    font-size: 0.72rem;
-    letter-spacing: 1px;
-    color: #86868b;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-weight: 500;
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    color: #00ffcc;
+    text-shadow: 0 0 10px rgba(0,255,204,0.3);
+    border: 1px solid rgba(0, 255, 204, 0.2);
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-weight: 600;
 }
 
-/* Полноэкранный двухколоночный контейнер с теплым амбиентным свечением */
+/* Основной контейнер с дорогой янтарной и неоновой подсветкой на фоне */
 .scroll-container {
     display: flex;
     width: 100%;
     height: 100vh;
     position: relative;
-    /* Мягкий янтарно-золотистый свет на фоне для дороговизны визуала */
-    background: radial-gradient(circle at 70% 50%, rgba(212, 163, 115, 0.08) 0%, transparent 65%);
+    background: 
+        radial-gradient(circle at 75% 50%, rgba(212, 163, 115, 0.05) 0%, transparent 55%),
+        radial-gradient(circle at 60% 30%, rgba(255, 255, 255, 0.02) 0%, transparent 40%);
 }
 
-/* Левая часть: Описание услуг */
+/* Описание услуг */
 .info-panel {
     width: 45%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 10%;
+    padding-left: 8%;
     position: relative;
     z-index: 10;
 }
@@ -81,10 +79,10 @@ body {
 .text-block {
     position: absolute;
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(40px);
+    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
     pointer-events: none;
-    padding-right: 40px;
+    padding-right: 50px;
 }
 
 .text-block.active {
@@ -94,167 +92,171 @@ body {
 }
 
 .text-block h2 {
-    font-size: 2.4rem;
-    font-weight: 600;
-    margin-bottom: 20px;
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-bottom: 24px;
     line-height: 1.2;
-    color: #1d1d1f;
+    background: linear-gradient(180deg, #ffffff 0%, #888888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     letter-spacing: -0.5px;
 }
 
 .text-block p {
-    font-size: 1.05rem;
-    line-height: 1.6;
-    color: #86868b;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #9a9a9f;
     font-weight: 400;
 }
 
-/* Правая часть: Настройка 3D-пространства */
+/* 3D Пространство (Центрируем и фиксируем) */
 .view-3d {
     width: 55%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    perspective: 2000px;
+    perspective: 2500px;
     perspective-origin: 50% 50%;
 }
 
 .scene-wrapper {
-    width: 100%;
-    height: 100%;
+    transform-style: preserve-3d;
+    will-change: transform;
     display: flex;
     justify-content: center;
     align-items: center;
-    transform-style: preserve-3d;
-    will-change: transform;
 }
 
-/* 3D модель страницы */
+/* Сама 3D модель страницы */
 .web-page-model {
-    width: 380px;
-    height: 560px;
+    width: 400px;
+    height: 580px;
     position: relative;
     transform-style: preserve-3d;
     will-change: transform;
 }
 
-/* Свойства слоев конструктора */
+/* Правила для слоев */
 .layer {
     position: absolute;
     inset: 0;
-    border-radius: 32px;
+    border-radius: 36px;
     transform-style: preserve-3d;
     backface-visibility: hidden;
     will-change: transform;
 }
 
-/* Слой 1: Белоснежный глянец (Эффект дорогого полированного фарфора) */
+/* СЛОЙ 1: Глянцевый обсидиан (База) */
 .layer-base {
-    background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.04);
-    /* Глубокие, очень мягкие «воздушные» тени */
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.06), 0 10px 20px rgba(0, 0, 0, 0.02);
+    background: linear-gradient(135deg, #141415 0%, #09090a 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 
+        0 50px 100px rgba(0, 0, 0, 0.8),
+        inset 0 1px 0 rgba(255,255,255,0.1);
 }
 
 .glossy-finish {
     position: absolute;
     inset: 0;
-    border-radius: 32px;
-    background: linear-gradient(135deg, rgba(255,255,255,0.6) 0%, transparent 60%);
+    border-radius: 36px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 50%);
 }
 
-/* Слой 2: Тонкая матовая контурная сетка (Скелет сайта) */
+/* СЛОЙ 2: Матовая неоновая сетка */
 .layer-grid {
-    background: rgba(0, 0, 0, 0.005);
-    border: 1px dashed rgba(0, 0, 0, 0.12);
-    padding: 35px;
+    background: rgba(255, 255, 255, 0.005);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 40px 30px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
 }
 
 .grid-line {
     width: 100%;
-    height: 42px;
-    border: 1px solid rgba(0, 0, 0, 0.03);
-    background: rgba(0, 0, 0, 0.01);
-    border-radius: 12px;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    background: linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.03));
+    border-radius: 14px;
+    box-shadow: inset 0 1px 2px rgba(255,255,255,0.02);
 }
 
-/* Слой 3: Премиальное чистое матовое стекло (Frosted Glass) */
+/* СЛОЙ 3: Высококлассное матовое стекло (Frosted Glassmorphism) */
 .layer-glass-panels {
     padding: 30px;
-    position: relative;
 }
 
 .glass-card {
     position: absolute;
-    /* Белое матовое размытие */
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.03);
+    box-shadow: 
+        0 30px 60px rgba(0,0,0,0.4),
+        inset 0 1px 1px rgba(255,255,255,0.1);
 }
 
-.card-left { top: 45px; left: 35px; width: 140px; height: 110px; }
-.card-right { top: 45px; right: 35px; width: 140px; height: 110px; }
-.card-wide { bottom: 65px; left: 35px; right: 35px; height: 190px; }
+.card-left { top: 50px; left: 30px; width: 160px; height: 120px; }
+.card-right { top: 50px; right: 30px; width: 160px; height: 120px; }
+.card-wide { bottom: 70px; left: 30px; right: 30px; height: 200px; }
 
-/* Слой 4: Контрастные минималистичные элементы управления */
+/* СЛОЙ 4: Контрастные UI элементы (Глянцевый черный металл + Неон) */
 .layer-ui-elements {
     position: relative;
 }
 
 .ui-node {
     position: absolute;
-    background: #1d1d1f; /* Глубокий антрацит для сильного контраста */
-    color: #ffffff;
-    font-size: 0.72rem;
-    font-weight: 600;
-    padding: 8px 16px;
-    border-radius: 30px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    background: #ffffff;
+    color: #000000;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 40px;
+    box-shadow: 0 15px 30px rgba(255,255,255,0.15);
     letter-spacing: 0.5px;
+    border: 1px solid rgba(255,255,255,0.5);
 }
 
-.node-1 { top: 85px; left: 55px; }
-.node-2 { top: 85px; right: 55px; }
-.node-3 { bottom: 145px; left: 50%; transform: translateX(-50%); }
+.node-1 { top: 90px; left: 60px; }
+.node-2 { top: 90px; right: 60px; }
+.node-3 { bottom: 155px; left: 50%; transform: translateX(-50%); }
 
 .interactive-circle {
     position: absolute;
     top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 95px;
-    height: 95px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(0,0,0,0.02) 0%, transparent 70%);
-    border: 2px solid #1d1d1f;
+    background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+    border: 2px solid #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 0 30px rgba(255,255,255,0.2);
 }
 
 .number {
-    font-size: 1.4rem;
-    font-weight: 400;
-    color: #1d1d1f;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: #ffffff;
+    letter-spacing: -1px;
 }
 
-/* Нижний индикатор */
+/* Индикатор скролла */
 .scroll-indicator {
     position: fixed;
-    bottom: 30px;
+    bottom: 35px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 0.75rem;
     letter-spacing: 2px;
-    color: #86868b;
+    color: rgba(255, 255, 255, 0.4);
     font-weight: 500;
     z-index: 100;
 }
