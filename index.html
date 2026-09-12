@@ -3,101 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KrakenCode — Премиум Веб-Технологии</title>
+    <title>KrakenCode — Студия Веб-Разработки</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Подключаем GSAP и ScrollTrigger для магии 3D-скролла -->
-    <script src="https://cloudflare.com"></script>
-    <script src="https://cloudflare.com"></script>
 </head>
 <body>
 
-    <!-- Фиксированная стеклянная шапка Apple Light Style -->
-    <header class="apple-header">
+    <!-- Навигация -->
+    <header class="header">
         <div class="logo">KRAKEN<span>CODE</span></div>
-        <nav>
-            <span class="status-badge">✨ LIGHT INTERACTIVE EXP</span>
+        <nav class="nav">
+            <a href="#services">Услуги</a>
+            <a href="#about">О нас</a>
+            <a href="#contact" class="btn-connect">Связаться</a>
         </nav>
     </header>
 
-    <!-- Главный контейнер для фиксации экрана при скролле -->
-    <main class="scroll-container">
-        
-        <!-- Левая панель: Сменяющиеся коммерческие смыслы (Услуги) -->
-        <section class="info-panel">
-            
-            <div class="text-block active" id="text-1">
-                <h2>Сайты под малый и большой бизнес</h2>
-                <p>Проектируем цифровые экосистемы под любой масштаб. От адаптивных и легких решений для малого бизнеса до отказоустойчивых корпоративных платформ.</p>
+    <!-- Главный экран -->
+    <section class="hero">
+        <div class="hero-container">
+            <span class="badge">Премиальные цифровые решения</span>
+            <h1>Создаем сайты, которые заставляют сказать <span>«ВАУ»</span></h1>
+            <p>Высокотехнологичная разработка для бизнеса, умная автоматизация и безупречный дизайн в стиле Apple.</p>
+            <div class="hero-actions">
+                <a href="#services" class="btn-primary">Смотреть услуги</a>
+                <a href="#contact" class="btn-secondary">Обсудить проект</a>
             </div>
-            
-            <div class="text-block" id="text-2">
-                <h2>Одностраничные сайты и лендинги</h2>
-                <p>Ультра-премиальные Landing Pages с уникальным интерактивным визуалом. Воздушный дизайн, который заставляет затаить дыхание и генерирует заявки.</p>
-            </div>
-            
-            <div class="text-block" id="text-3">
-                <h2>Интеграция гибких CMS</h2>
-                <p>Разработка сайтов на базе современных систем управления. Полная свобода редактирования контента, максимальная скорость и чистота кода.</p>
+        </div>
+    </section>
+
+    <!-- Блок Услуг -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Наши услуги</h2>
+                <p>Полный цикл разработки: от концепта до глубокой поисковой оптимизации.</p>
             </div>
 
-            <div class="text-block" id="text-4">
-                <h2>Боты и Автоматизация процессов</h2>
-                <p>Создание умных Telegram/Discord ботов, парсеров и сквозных систем автоматизации, которые полностью заменяют рутинную работу человека.</p>
-            </div>
-
-            <div class="text-block" id="text-5">
-                <h2>SEO-настройка и оптимизация</h2>
-                <p>Глубокая поисковая оптимизация структуры, ускорение рендеринга страниц до предела и идеальная подготовка сайта к продвижению.</p>
-            </div>
-            
-        </section>
-
-        <!-- Правая панель: Настоящая светлая 3D-сцена с конструктором сайта -->
-        <section class="view-3d">
-            <div class="scene-wrapper" id="scene-3d">
+            <div class="services-grid">
                 
-                <!-- Собранный макет сайта, состоящий из 3D-слоев -->
-                <div class="web-page-model" id="page-model">
-                    
-                    <!-- Слой 1: Белоснежная глянцевая основа (Фарфоровый корпус страницы) -->
-                    <div class="layer layer-base">
-                        <div class="glossy-finish"></div>
-                    </div>
-                    
-                    <!-- Слой 2: Минималистичная контурная сетка (UI Layout) -->
-                    <div class="layer layer-grid">
-                        <div class="grid-line"></div>
-                        <div class="grid-line"></div>
-                        <div class="grid-line"></div>
-                    </div>
-                    
-                    <!-- Слой 3: Премиальные матовые стеклянные карточки контента (Frosted Glass) -->
-                    <div class="layer layer-glass-panels">
-                        <div class="glass-card card-left"></div>
-                        <div class="glass-card card-right"></div>
-                        <div class="glass-card card-wide"></div>
-                    </div>
-                    
-                    <!-- Слой 4: Акцентные интерактивные элементы и ноды -->
-                    <div class="layer layer-ui-elements">
-                        <div class="ui-node node-1">⚡ CMS</div>
-                        <div class="ui-node node-2">🤖 BOT</div>
-                        <div class="ui-node node-3">📈 SEO</div>
-                        <div class="interactive-circle">
-                            <span class="number">24</span>
-                        </div>
-                    </div>
-                    
+                <!-- Карточка 1 -->
+                <div class="service-card">
+                    <div class="icon">💼</div>
+                    <h3>Сайты под бизнес</h3>
+                    <p>Проектируем цифровые экосистемы под любой масштаб. Эффективные решения для малого бизнеса и отказоустойчивые платформы для крупных корпораций.</p>
+                </div>
+
+                <!-- Карточка 2 -->
+                <div class="service-card">
+                    <div class="icon">📄</div>
+                    <h3>Одностраничные сайты</h3>
+                    <p>Премиальные Landing Pages с уникальным визуалом и высокой конверсией. Идеальный баланс эстетики, скорости работы и маркетинговой логики.</p>
+                </div>
+
+                <!-- Карточка 3 -->
+                <div class="service-card">
+                    <div class="icon">⚙️</div>
+                    <h3>Сайты с использованием CMS</h3>
+                    <p>Разработка и интеграция современных, гибких систем управления контентом. Полная свобода редактирования данных без привлечения программистов.</p>
+                </div>
+
+                <!-- Карточка 4 -->
+                <div class="service-card">
+                    <div class="icon">🤖</div>
+                    <h3>Написание ботов</h3>
+                    <p>Создание интеллектуальных и многофункциональных ботов для Telegram и Discord. Интеграция с вашими внутренними базами данных и сервисами.</p>
+                </div>
+
+                <!-- Карточка 5 -->
+                <div class="service-card">
+                    <div class="icon">⚡</div>
+                    <h3>Автоматизация процессов</h3>
+                    <p>Разработка индивидуальных скриптов, парсеров и сквозных систем автоматизации рутины, которые экономят время и заменяют человеческий фактор.</p>
+                </div>
+
+                <!-- Карточка 6 -->
+                <div class="service-card">
+                    <div class="icon">📈</div>
+                    <h3>SEO-настройка и аудит</h3>
+                    <p>Глубокая поисковая оптимизация кода, ускорение рендеринга страниц до предела и правильная техническая подготовка сайта к продвижению.</p>
                 </div>
 
             </div>
-        </section>
+        </div>
+    </section>
 
-    </main>
+    <!-- Короткий блок "О нас" -->
+    <section id="about" class="about">
+        <div class="about-container">
+            <h2>Почему выбирают нас</h2>
+            <div class="about-features">
+                <div class="feature">
+                    <h4>01 / Безупречный код</h4>
+                    <p>Пишем чистый, поддерживаемый код с максимальной производительностью.</p>
+                </div>
+                <div class="feature">
+                    <h4>02 / Скорость загрузки</h4>
+                    <p>Оптимизируем графику и архитектуру, чтобы сайт открывался мгновенно.</p>
+                </div>
+                <div class="feature">
+                    <h4>03 / Фокус на результат</h4>
+                    <p>Каждая деталь интерфейса решает конкретную бизнес-задачу.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Индикатор скролла снизу -->
-    <div class="scroll-indicator">ПРОКРУТИТЕ ДЛЯ ДЕКОНСТРУКЦИИ 🛞</div>
+    <!-- Форма обратной связи -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Начнем ваш проект?</h2>
+                <p>Оставьте заявку, и мы разработаем технологичное решение специально под ваши задачи.</p>
+            </div>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Форма отправлена! (Демо)');">
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="email" placeholder="Email адрес" required>
+                <textarea placeholder="Расскажите немного о проекте" rows="4" required></textarea>
+                <button type="submit" class="btn-submit">Отправить заявку</button>
+            </form>
+        </div>
+    </section>
 
-    <script src="script.js"></script>
+    <!-- Футер -->
+    <footer class="footer">
+        <p>&copy; 2026 KRAKENCODE. Все права защищены. Разработано в высшем качестве.</p>
+    </footer>
+
 </body>
 </html>

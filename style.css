@@ -1,22 +1,28 @@
 @import url('https://googleapis.com');
 
+/* Базовые настройки стиля Apple Light */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: #0b0b0c; /* Меняем фон на ультра-стильный глубокий графит */
-    color: #ffffff;
-    overflow-x: hidden;
-    height: 100vh;
+    background-color: #f5f5f7; /* Светло-серый премиальный фон Apple */
+    color: #1d1d1f; /* Глубокий антрацитовый цвет текста */
 }
 
-/* Хедер Apple Style Dark */
-.apple-header {
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Навигация */
+.header {
     position: fixed;
     top: 0;
     left: 0;
@@ -25,238 +31,340 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 60px;
-    background: rgba(11, 11, 12, 0.5);
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 0 40px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     z-index: 100;
 }
 
 .logo {
-    font-weight: 800;
-    letter-spacing: 3px;
-    font-size: 1.2rem;
-    background: linear-gradient(135deg, #fff 0%, #555 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.status-badge {
-    font-size: 0.7rem;
-    letter-spacing: 1.5px;
-    color: #00ffcc;
-    text-shadow: 0 0 10px rgba(0,255,204,0.3);
-    border: 1px solid rgba(0, 255, 204, 0.2);
-    padding: 6px 16px;
-    border-radius: 30px;
-    font-weight: 600;
-}
-
-/* Основной контейнер с дорогой янтарной и неоновой подсветкой на фоне */
-.scroll-container {
-    display: flex;
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    background: 
-        radial-gradient(circle at 75% 50%, rgba(212, 163, 115, 0.05) 0%, transparent 55%),
-        radial-gradient(circle at 60% 30%, rgba(255, 255, 255, 0.02) 0%, transparent 40%);
-}
-
-/* Описание услуг */
-.info-panel {
-    width: 45%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 8%;
-    position: relative;
-    z-index: 10;
-}
-
-.text-block {
-    position: absolute;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-    pointer-events: none;
-    padding-right: 50px;
-}
-
-.text-block.active {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-}
-
-.text-block h2 {
-    font-size: 2.6rem;
     font-weight: 700;
-    margin-bottom: 24px;
-    line-height: 1.2;
-    background: linear-gradient(180deg, #ffffff 0%, #888888 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: -0.5px;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    color: #1d1d1f;
 }
 
-.text-block p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #9a9a9f;
+.logo span {
+    font-weight: 300;
+    color: #86868b;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #515154;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav a:hover {
+    color: #1d1d1f;
+}
+
+.nav .btn-connect {
+    background: #1d1d1f;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background 0.2s;
+}
+
+.nav .btn-connect:hover {
+    background: #000000;
+    color: #ffffff;
+}
+
+/* Главный экран */
+.hero {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at 50% 40%, rgba(212, 163, 115, 0.06) 0%, transparent 60%);
+    padding: 0 20px;
+    margin-top: 70px;
+}
+
+.hero-container {
+    max-width: 800px;
+}
+
+.badge {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #86868b;
+    border: 1px solid rgba(0,0,0,0.08);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 24px;
+    background: #ffffff;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    color: #1d1d1f;
+}
+
+.hero h1 span {
+    background: linear-gradient(135deg, #2c2c2e 0%, #86868b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: #86868b;
+    line-height: 1.5;
+    margin-bottom: 40px;
     font-weight: 400;
 }
 
-/* 3D Пространство (Центрируем и фиксируем) */
-.view-3d {
-    width: 55%;
-    height: 100%;
+.hero-actions {
     display: flex;
     justify-content: center;
-    align-items: center;
-    perspective: 2500px;
-    perspective-origin: 50% 50%;
+    gap: 20px;
 }
 
-.scene-wrapper {
-    transform-style: preserve-3d;
-    will-change: transform;
+.btn-primary {
+    text-decoration: none;
+    background: #1d1d1f;
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 24px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: #000000;
+}
+
+.btn-secondary {
+    text-decoration: none;
+    color: #1d1d1f;
+    padding: 14px 28px;
+    border-radius: 24px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border: 1px solid rgba(0,0,0,0.15);
+    background: #ffffff;
+    transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+    background: #f5f5f7;
+    border-color: rgba(0,0,0,0.3);
+}
+
+/* Секция Услуг */
+.services {
+    padding: 120px 0;
+    background: #ffffff;
+}
+
+.section-title {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 80px auto;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.section-title p {
+    font-size: 1.1rem;
+    color: #86868b;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: #f5f5f7;
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid rgba(0,0,0,0.01);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.04);
+}
+
+.service-card .icon {
+    font-size: 2rem;
+    margin-bottom: 24px;
+}
+
+.service-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: #1d1d1f;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    color: #515154;
+    line-height: 1.6;
+}
+
+/* Секция О нас */
+.about {
+    padding: 100px 20px;
+    background: #f5f5f7;
+}
+
+.about-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.about-features {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.feature {
+    flex: 1 1 280px;
+}
+
+.feature h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.feature p {
+    font-size: 0.95rem;
+    color: #86868b;
+    line-height: 1.6;
+}
+
+/* Секция Контактов */
+.contact {
+    padding: 120px 20px;
+    background: #ffffff;
+}
+
+.contact-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
     align-items: center;
 }
 
-/* Сама 3D модель страницы */
-.web-page-model {
-    width: 400px;
-    height: 580px;
-    position: relative;
-    transform-style: preserve-3d;
-    will-change: transform;
+.contact-info {
+    flex: 1 1 400px;
 }
 
-/* Правила для слоев */
-.layer {
-    position: absolute;
-    inset: 0;
-    border-radius: 36px;
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-    will-change: transform;
+.contact-info h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
 }
 
-/* СЛОЙ 1: Глянцевый обсидиан (База) */
-.layer-base {
-    background: linear-gradient(135deg, #141415 0%, #09090a 100%);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 
-        0 50px 100px rgba(0, 0, 0, 0.8),
-        inset 0 1px 0 rgba(255,255,255,0.1);
+.contact-info p {
+    font-size: 1.1rem;
+    color: #86868b;
+    line-height: 1.6;
 }
 
-.glossy-finish {
-    position: absolute;
-    inset: 0;
-    border-radius: 36px;
-    background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 50%);
-}
-
-/* СЛОЙ 2: Матовая неоновая сетка */
-.layer-grid {
-    background: rgba(255, 255, 255, 0.005);
-    border: 1px solid rgba(255, 255, 255, 0.04);
-    padding: 40px 30px;
+.contact-form {
+    flex: 1 1 400px;
+    background: #f5f5f7;
+    padding: 40px;
+    border-radius: 28px;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
 }
 
-.grid-line {
+.contact-form input, 
+.contact-form textarea {
     width: 100%;
-    height: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    background: linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.03));
-    border-radius: 14px;
-    box-shadow: inset 0 1px 2px rgba(255,255,255,0.02);
-}
-
-/* СЛОЙ 3: Высококлассное матовое стекло (Frosted Glassmorphism) */
-.layer-glass-panels {
-    padding: 30px;
-}
-
-.glass-card {
-    position: absolute;
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 20px;
-    box-shadow: 
-        0 30px 60px rgba(0,0,0,0.4),
-        inset 0 1px 1px rgba(255,255,255,0.1);
-}
-
-.card-left { top: 50px; left: 30px; width: 160px; height: 120px; }
-.card-right { top: 50px; right: 30px; width: 160px; height: 120px; }
-.card-wide { bottom: 70px; left: 30px; right: 30px; height: 200px; }
-
-/* СЛОЙ 4: Контрастные UI элементы (Глянцевый черный металл + Неон) */
-.layer-ui-elements {
-    position: relative;
-}
-
-.ui-node {
-    position: absolute;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.1);
     background: #ffffff;
-    color: #000000;
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 10px 20px;
-    border-radius: 40px;
-    box-shadow: 0 15px 30px rgba(255,255,255,0.15);
-    letter-spacing: 0.5px;
-    border: 1px solid rgba(255,255,255,0.5);
+    font-size: 0.95rem;
+    color: #1d1d1f;
+    outline: none;
+    transition: border-color 0.2s;
 }
 
-.node-1 { top: 90px; left: 60px; }
-.node-2 { top: 90px; right: 60px; }
-.node-3 { bottom: 155px; left: 50%; transform: translateX(-50%); }
-
-.interactive-circle {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
-    border: 2px solid #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 30px rgba(255,255,255,0.2);
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    border-color: #1d1d1f;
 }
 
-.number {
-    font-size: 1.6rem;
-    font-weight: 300;
+.btn-submit {
+    background: #1d1d1f;
     color: #ffffff;
-    letter-spacing: -1px;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
 }
 
-/* Индикатор скролла */
-.scroll-indicator {
-    position: fixed;
-    bottom: 35px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.75rem;
-    letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.4);
-    font-weight: 500;
-    z-index: 100;
+.btn-submit:hover {
+    background: #000000;
+}
+
+/* Футер */
+.footer {
+    padding: 40px 20px;
+    text-align: center;
+    background: #f5f5f7;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    font-size: 0.85rem;
+    color: #86868b;
+}
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .nav { display: none; } /* Упрощение для мобильных */
 }
