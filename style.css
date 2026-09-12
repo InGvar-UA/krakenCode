@@ -1,0 +1,260 @@
+/* Премиальный светлый дизайн в стиле Apple */
+@import url('https://googleapis.com');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: #f5f5f7; /* Каноничный светлый фон Apple */
+    color: #1d1d1f;
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+/* Элегантная ультра-светлая стеклянная шапка */
+.apple-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    background: rgba(245, 245, 247, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    z-index: 100;
+}
+
+.logo {
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+    color: #1d1d1f;
+}
+
+.logo span {
+    font-weight: 300;
+    color: #86868b;
+}
+
+.status-badge {
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    color: #86868b;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+/* Полноэкранный двухколоночный контейнер с теплым амбиентным свечением */
+.scroll-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    /* Мягкий янтарно-золотистый свет на фоне для дороговизны визуала */
+    background: radial-gradient(circle at 70% 50%, rgba(212, 163, 115, 0.08) 0%, transparent 65%);
+}
+
+/* Левая часть: Описание услуг */
+.info-panel {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10%;
+    position: relative;
+    z-index: 10;
+}
+
+.text-block {
+    position: absolute;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    padding-right: 40px;
+}
+
+.text-block.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.text-block h2 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    color: #1d1d1f;
+    letter-spacing: -0.5px;
+}
+
+.text-block p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #86868b;
+    font-weight: 400;
+}
+
+/* Правая часть: Настройка 3D-пространства */
+.view-3d {
+    width: 55%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 2000px;
+    perspective-origin: 50% 50%;
+}
+
+.scene-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+/* 3D модель страницы */
+.web-page-model {
+    width: 380px;
+    height: 560px;
+    position: relative;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+/* Свойства слоев конструктора */
+.layer {
+    position: absolute;
+    inset: 0;
+    border-radius: 32px;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform;
+}
+
+/* Слой 1: Белоснежный глянец (Эффект дорогого полированного фарфора) */
+.layer-base {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    /* Глубокие, очень мягкие «воздушные» тени */
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.06), 0 10px 20px rgba(0, 0, 0, 0.02);
+}
+
+.glossy-finish {
+    position: absolute;
+    inset: 0;
+    border-radius: 32px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.6) 0%, transparent 60%);
+}
+
+/* Слой 2: Тонкая матовая контурная сетка (Скелет сайта) */
+.layer-grid {
+    background: rgba(0, 0, 0, 0.005);
+    border: 1px dashed rgba(0, 0, 0, 0.12);
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.grid-line {
+    width: 100%;
+    height: 42px;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    background: rgba(0, 0, 0, 0.01);
+    border-radius: 12px;
+}
+
+/* Слой 3: Премиальное чистое матовое стекло (Frosted Glass) */
+.layer-glass-panels {
+    padding: 30px;
+    position: relative;
+}
+
+.glass-card {
+    position: absolute;
+    /* Белое матовое размытие */
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.03);
+}
+
+.card-left { top: 45px; left: 35px; width: 140px; height: 110px; }
+.card-right { top: 45px; right: 35px; width: 140px; height: 110px; }
+.card-wide { bottom: 65px; left: 35px; right: 35px; height: 190px; }
+
+/* Слой 4: Контрастные минималистичные элементы управления */
+.layer-ui-elements {
+    position: relative;
+}
+
+.ui-node {
+    position: absolute;
+    background: #1d1d1f; /* Глубокий антрацит для сильного контраста */
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    letter-spacing: 0.5px;
+}
+
+.node-1 { top: 85px; left: 55px; }
+.node-2 { top: 85px; right: 55px; }
+.node-3 { bottom: 145px; left: 50%; transform: translateX(-50%); }
+
+.interactive-circle {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,0,0,0.02) 0%, transparent 70%);
+    border: 2px solid #1d1d1f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.03);
+}
+
+.number {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #1d1d1f;
+}
+
+/* Нижний индикатор */
+.scroll-indicator {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: #86868b;
+    font-weight: 500;
+    z-index: 100;
+}

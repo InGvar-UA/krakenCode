@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrakenCode — Премиум Веб-Технологии</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключаем GSAP и ScrollTrigger для магии 3D-скролла -->
+    <script src="https://cloudflare.com"></script>
+    <script src="https://cloudflare.com"></script>
+</head>
+<body>
+
+    <!-- Фиксированная стеклянная шапка Apple Light Style -->
+    <header class="apple-header">
+        <div class="logo">KRAKEN<span>CODE</span></div>
+        <nav>
+            <span class="status-badge">✨ LIGHT INTERACTIVE EXP</span>
+        </nav>
+    </header>
+
+    <!-- Главный контейнер для фиксации экрана при скролле -->
+    <main class="scroll-container">
+        
+        <!-- Левая панель: Сменяющиеся коммерческие смыслы (Услуги) -->
+        <section class="info-panel">
+            
+            <div class="text-block active" id="text-1">
+                <h2>Сайты под малый и большой бизнес</h2>
+                <p>Проектируем цифровые экосистемы под любой масштаб. От адаптивных и легких решений для малого бизнеса до отказоустойчивых корпоративных платформ.</p>
+            </div>
+            
+            <div class="text-block" id="text-2">
+                <h2>Одностраничные сайты и лендинги</h2>
+                <p>Ультра-премиальные Landing Pages с уникальным интерактивным визуалом. Воздушный дизайн, который заставляет затаить дыхание и генерирует заявки.</p>
+            </div>
+            
+            <div class="text-block" id="text-3">
+                <h2>Интеграция гибких CMS</h2>
+                <p>Разработка сайтов на базе современных систем управления. Полная свобода редактирования контента, максимальная скорость и чистота кода.</p>
+            </div>
+
+            <div class="text-block" id="text-4">
+                <h2>Боты и Автоматизация процессов</h2>
+                <p>Создание умных Telegram/Discord ботов, парсеров и сквозных систем автоматизации, которые полностью заменяют рутинную работу человека.</p>
+            </div>
+
+            <div class="text-block" id="text-5">
+                <h2>SEO-настройка и оптимизация</h2>
+                <p>Глубокая поисковая оптимизация структуры, ускорение рендеринга страниц до предела и идеальная подготовка сайта к продвижению.</p>
+            </div>
+            
+        </section>
+
+        <!-- Правая панель: Настоящая светлая 3D-сцена с конструктором сайта -->
+        <section class="view-3d">
+            <div class="scene-wrapper" id="scene-3d">
+                
+                <!-- Собранный макет сайта, состоящий из 3D-слоев -->
+                <div class="web-page-model" id="page-model">
+                    
+                    <!-- Слой 1: Белоснежная глянцевая основа (Фарфоровый корпус страницы) -->
+                    <div class="layer layer-base">
+                        <div class="glossy-finish"></div>
+                    </div>
+                    
+                    <!-- Слой 2: Минималистичная контурная сетка (UI Layout) -->
+                    <div class="layer layer-grid">
+                        <div class="grid-line"></div>
+                        <div class="grid-line"></div>
+                        <div class="grid-line"></div>
+                    </div>
+                    
+                    <!-- Слой 3: Премиальные матовые стеклянные карточки контента (Frosted Glass) -->
+                    <div class="layer layer-glass-panels">
+                        <div class="glass-card card-left"></div>
+                        <div class="glass-card card-right"></div>
+                        <div class="glass-card card-wide"></div>
+                    </div>
+                    
+                    <!-- Слой 4: Акцентные интерактивные элементы и ноды -->
+                    <div class="layer layer-ui-elements">
+                        <div class="ui-node node-1">⚡ CMS</div>
+                        <div class="ui-node node-2">🤖 BOT</div>
+                        <div class="ui-node node-3">📈 SEO</div>
+                        <div class="interactive-circle">
+                            <span class="number">24</span>
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Индикатор скролла снизу -->
+    <div class="scroll-indicator">ПРОКРУТИТЕ ДЛЯ ДЕКОНСТРУКЦИИ 🛞</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
